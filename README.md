@@ -36,6 +36,7 @@ Example output is in this format:
     },
     "text": "JavaScript: The Good Farts.\n\n(I've been holding on to this tweet for 22 months)",
     "time": "2014-02-27T19:44:03.000Z",
+    "url": "https://twitter.com/SlexAxton/statuses/439123783694028800",
     "stats": {
         "rt": 51,
         "fav": 46

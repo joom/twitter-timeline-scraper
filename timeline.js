@@ -15,9 +15,12 @@ Timeline = {
 		var headerTitle = tDoc.querySelectorAll('[data-scribe="section:header"] [data-scribe="element:title"]');
 
 		var tweets = Array.prototype.slice.call(tDoc.querySelectorAll('[data-scribe="component:tweet"]'));
-
+		
 		return tweets.map(function(tweet) {
-			var time = tweet.querySelectorAll('[data-scribe="element:mini_timestamp"]')[0].getAttribute('data-datetime');
+			var miniTimestamp = tweet.querySelectorAll('[data-scribe="element:mini_timestamp"]')[0];
+
+			var time = miniTimestamp.getAttribute('data-datetime');
+
 			var avatar = tweet.querySelectorAll('[data-scribe="element:avatar"]')[0];
 
 			var stats = tweet.querySelectorAll('[data-scribe="component:stats"]');
@@ -47,6 +50,7 @@ Timeline = {
 				},
 				text: tweet.querySelectorAll('.e-entry-title')[0].innerText,
 				time: new Date(time),
+				url: miniTimestamp.getAttribute('href'),
 				stats: {
 					rt: parseInt(rt),
 					fav: parseInt(fav)
