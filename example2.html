@@ -24,7 +24,7 @@
 		<script src="timeline.js"></script>
 		<script>
 		document.addEventListener('onTimelineRender', function(e) {
-			Timeline.toJSON(e.detail.timeline).forEach(function(tweet) {
+			Timeline.serialize(e.detail.timeline).forEach(function(tweet) {
 				document.getElementById("tweet-list").innerHTML += "<li>" + tweet.text + "</li>";
 			});
 		});

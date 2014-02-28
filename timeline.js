@@ -7,7 +7,7 @@ Timeline = {
 		});
 		document.dispatchEvent(onRender);
 	},
-	toJSON: function(target) {
+	serialize: function(target) {
 		var tDoc = target.contentWindow.document;
 
 		var timeline = tDoc.querySelectorAll('[data-scribe="page:timeline"]');
@@ -50,7 +50,10 @@ Timeline = {
 				stats: {
 					rt: parseInt(rt),
 					fav: parseInt(fav)
-				}
+				},
+				retweeted: !!tweet.querySelectorAll('.retweet-credit').length,
+				photo: !!tweet.querySelectorAll('.ic-pho').length,
+				playable: !!tweet.querySelectorAll('.ic-pla').length
 			};
 		});
 	}

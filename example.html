@@ -3,7 +3,9 @@
 
 <script src="timeline.js"></script>
 <script>
+var data;
 document.addEventListener('onTimelineRender', function(e) {
-	console.log(Timeline.toJSON(e.detail.timeline));
+	data = Timeline.serialize(e.detail.timeline);
+	console.log(data);
 });
 </script>
